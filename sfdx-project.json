@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "src/slack-for-one-logger",
+      "default": true
+    }
+  ],
+  "name": "slack-for-one-logger",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "54.0"
+}

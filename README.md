@@ -1,2 +1,1 @@
-# apex-logger-slack
-Slack Plugin for Apex Logger
+# Slack for One Logger
