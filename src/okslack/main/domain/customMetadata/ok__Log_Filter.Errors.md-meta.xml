@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Errors</label>
+    <protected>false</protected>
+    <values>
+        <field>ok__End_Time__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ok__Log_Levels__c</field>
+        <value xsi:type="xsd:string">ERROR</value>
+    </values>
+    <values>
+        <field>ok__Search_Text__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ok__Start_Time__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ok__Time_Preset__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ok__User_Id__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ok__User_Username__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

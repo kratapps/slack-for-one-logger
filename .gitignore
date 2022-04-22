@@ -47,3 +47,5 @@ IlluminatedCloud/
 **/flows/**
 **/workflows/**
 **/Address.settings-meta.xml
+
+**/namedCredentials/**
