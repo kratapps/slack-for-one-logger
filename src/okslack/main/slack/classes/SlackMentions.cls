@@ -1,7 +1,7 @@
 public class SlackMentions {
     public List<SlackMention> mentions = new List<SlackMention>();
 
-    public SlackMentions addMembers(Set<String> memberIds) {
+    public SlackMentions addMembers(List<String> memberIds) {
         for (String memberId : memberIds) {
             addMember(memberId);
         }
@@ -25,7 +25,7 @@ public class SlackMentions {
 
     public SlackMentions mentionHere(Boolean mentionHere) {
         if (mentionHere != null && mentionHere) {
-            mentions.add(SlackMention.here());
+            addHere();
         }
         return this;
     }
