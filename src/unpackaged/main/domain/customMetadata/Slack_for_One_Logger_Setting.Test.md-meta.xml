@@ -12,11 +12,11 @@
     </values>
     <values>
         <field>Log_Filter__c</field>
-        <value xsi:type="xsd:string">Errors</value>
+        <value xsi:type="xsd:string">Errors_All_Time</value>
     </values>
     <values>
         <field>Mention_Here__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
     <values>
         <field>Mention_User_Ids__c</field>
