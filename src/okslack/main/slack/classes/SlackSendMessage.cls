@@ -3,6 +3,8 @@
  */
 public inherited sharing class SlackSendMessage implements Queueable, Database.AllowsCallouts {
     private static final ok.Logger logger = ok.Logger.getLogger(SlackSendMessage.class);
+    @TestVisible
+    private SlackHttp http = SlackHttp.create();
     /**
      * List of send message requests when using queueable.
      */
@@ -27,8 +29,8 @@ public inherited sharing class SlackSendMessage implements Queueable, Database.A
         req.setEndpoint(request.endpoint);
         req.setMethod('POST');
         req.setHeader('Content-type', 'application/json');
-        req.setBody(JSON.serialize(request.message));
-        HttpResponse resp = new Http().send(req);
+        req.setBody(request.message.toJSON());
+        HttpResponse resp = http.send(req);
         Boolean isSuccessful = resp.getStatusCode() == 200;
         if (isSuccessful) {
             logger.info().addHttpRequest(req).addHttpResponse(resp).log('Slack message success.');

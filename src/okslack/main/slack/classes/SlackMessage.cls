@@ -27,4 +27,8 @@ public class SlackMessage {
         blocks.add(block);
         return block;
     }
+    
+    public String toJSON() {
+        return JSON.serialize(this);
+    }
 }

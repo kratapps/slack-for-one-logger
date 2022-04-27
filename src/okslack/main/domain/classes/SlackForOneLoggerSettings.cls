@@ -5,10 +5,6 @@ public class SlackForOneLoggerSettings extends SObjects {
     @TestVisible
     private static List<Slack_for_One_Logger_Setting__mdt> mocked = new List<Slack_for_One_Logger_Setting__mdt>();
     /**
-     * Field Set name bundled with this managed package. You can configure the fields to be sent in the message.
-     */
-    private static final String DEFAULT_LOG_FIELD_SET_NAME = 'Slack_Log_Field_Set';
-    /**
      * Construct the collection from a list.
      * 
      * @param records the settings list
@@ -62,10 +58,17 @@ public class SlackForOneLoggerSettings extends SObjects {
      * @return the FieldSet by setting Id map.
      */
     public Map<Id, FieldSet> getLogFieldSetByIds() {
+        Map<String, FieldSet> fieldSetsByName = ok__Log__c.SObjectType.getDescribe().fieldSets.getMap();
         Map<Id, FieldSet> result = new Map<Id, FieldSet>();
         for (Slack_for_One_Logger_Setting__mdt setting : getSettingList()) {
-            String logFieldSetName = String.isNotBlank(setting.Log_Field_Set__c) ? setting.Log_Field_Set__c : DEFAULT_LOG_FIELD_SET_NAME;
-            FieldSet value =  ok__Log__c.SObjectType.getDescribe().fieldSets.getMap().get(logFieldSetName);
+            FieldSet value = null;
+            if (String.isNotBlank(setting.Log_Field_Set__c)) {
+                if (fieldSetsByName.containsKey(setting.Log_Field_Set__c)) {
+                    value = fieldSetsByName.get(setting.Log_Field_Set__c);
+                } else if (fieldSetsByName.containsKey('okslack__' + setting.Log_Field_Set__c)) {
+                    value = fieldSetsByName.get('okslack__' + setting.Log_Field_Set__c);
+                }
+            }
             result.put(setting.Id, value);
         }
         return result;
