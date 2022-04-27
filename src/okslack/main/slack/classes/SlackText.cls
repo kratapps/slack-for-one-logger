@@ -1,3 +1,7 @@
+/**
+ * Slack Text Object
+ * https://api.slack.com/reference/block-kit/composition-objects#text
+ */
 public class SlackText {
     public Type type;
     public String text;

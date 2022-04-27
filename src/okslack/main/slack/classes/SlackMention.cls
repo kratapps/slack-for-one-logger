@@ -1,3 +1,7 @@
+/**
+ * Slack Mention
+ * https://api.slack.com/reference/surfaces/formatting#mentioning-users
+ */
 public class SlackMention {
     public SlackMention.Type type;
     public String id;

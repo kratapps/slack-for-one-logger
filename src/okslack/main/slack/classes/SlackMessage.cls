@@ -1,3 +1,7 @@
+/**
+ * Slack Message 
+ * https://api.slack.com/messaging/composing
+ */
 public class SlackMessage {
     public String text;
     public List<SlackBlock> blocks = new List<SlackBlock>();

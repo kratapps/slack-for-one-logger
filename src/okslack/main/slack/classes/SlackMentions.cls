@@ -1,3 +1,6 @@
+/**
+ * Collection of SlackMention.
+ */
 public class SlackMentions {
     public List<SlackMention> mentions = new List<SlackMention>();
 

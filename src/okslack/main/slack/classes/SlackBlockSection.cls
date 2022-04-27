@@ -1,3 +1,7 @@
+/**
+ * Slack Block Section
+ * https://api.slack.com/messaging/composing/layouts
+ */
 public class SlackBlockSection implements SlackBlock {
     public final String type = 'section';
     public SlackText text;

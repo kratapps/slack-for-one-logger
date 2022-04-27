@@ -1,3 +1,7 @@
+/**
+ * Slack Block Header
+ * https://api.slack.com/messaging/composing/layouts
+ */
 public class SlackBlockHeader implements SlackBlock {
     public final String type = 'header';
     public SlackText text;
