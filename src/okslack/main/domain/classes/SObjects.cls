@@ -1,3 +1,6 @@
+/**
+ * Generic SObjects collection.
+ */
 public virtual class SObjects {
     private List<SObject> records { get; private set; } {
         records = new List<SObject>();
