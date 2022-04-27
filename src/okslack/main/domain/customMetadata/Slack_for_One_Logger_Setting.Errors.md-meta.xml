@@ -8,11 +8,11 @@
     </values>
     <values>
         <field>Log_Field_Set__c</field>
-        <value xsi:type="xsd:string">okslack__Slack_Log_Field_Set</value>
+        <value xsi:type="xsd:string">Slack_Log_Field_Set</value>
     </values>
     <values>
         <field>Log_Filter__c</field>
-        <value xsi:type="xsd:string">Errors</value>
+        <value xsi:type="xsd:string">Errors_All_Time</value>
     </values>
     <values>
         <field>Mention_Here__c</field>

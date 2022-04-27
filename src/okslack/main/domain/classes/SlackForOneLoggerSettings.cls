@@ -7,7 +7,7 @@ public class SlackForOneLoggerSettings extends SObjects {
     /**
      * Field Set name bundled with this managed package. You can configure the fields to be sent in the message.
      */
-    private static final String DEFAULT_LOG_FIELD_SET_NAME = 'okslack__Slack_Log_Field_Set';
+    private static final String DEFAULT_LOG_FIELD_SET_NAME = 'Slack_Log_Field_Set';
     /**
      * Construct the collection from a list.
      * 
