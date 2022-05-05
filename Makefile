@@ -3,7 +3,7 @@ alias_dev_org=okslack-dev
 
 scratch-org:
 	make create-scratch-org
-	sfdx force:package:install -u ${alias} -r -w 60 -p 04t09000000vBHy # One Logger
+	sfdx force:package:install -u ${alias} -r -w 60 -p 04t09000000vBJa # One Logger
 	sfdx force:source:push -u ${alias}
 
 create-scratch-org:
