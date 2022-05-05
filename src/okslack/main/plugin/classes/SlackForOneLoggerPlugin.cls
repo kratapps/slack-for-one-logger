@@ -1,15 +1,15 @@
 /**
  * Configurable One Logger Plugin to send Slack messages.
  */
-global with sharing class SlackForOneLoggerPlugin extends ok.LogEventPlugin {
+global with sharing class SlackForOneLoggerPlugin extends ok.LoggerPlugin {
     /**
      * Plugin name should be a name describing this plugin, not null and no more than 32 characters.
      * The plugin name is added to events published from this plugin,
      * 
      * @return the name of this plugin.
      */
-    global override String getPluginName() {
-        return SlackForOneLoggerPlugin.class.getName();
+    global override Type getPluginType() {
+        return SlackForOneLoggerPlugin.class;
     }
     /**
      * Do not publish Log Events to avoid event recursion.

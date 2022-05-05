@@ -77,6 +77,7 @@ public inherited sharing class SlackSendMessage implements Queueable, Database.A
      */
     public void execute(QueueableContext ctx) {
         try {
+            ok.Logger.setPluginExecution(new SlackForOneLoggerPlugin());
             sendMix(requests);
         } catch (Exception e) {
             logger.error().addException(e).log('Unexpected error.');
