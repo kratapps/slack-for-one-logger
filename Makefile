@@ -10,7 +10,7 @@ create-scratch-org:
 	sfdx force:org:create -s -a ${alias} -f config/project-scratch-def.json -d 30
 	
 deploy-dev:
-	sfdx force:source:deploy -u ${alias_dev_org} -p src/ --testlevel RunLocalTests
+	sfdx force:source:deploy -u ${alias_dev_org} -p src/okslack --testlevel RunLocalTests
 	
 unit-test:
 	sfdx force:apex:test:run --codecoverage --testlevel RunLocalTests --resultformat human -u ${alias}

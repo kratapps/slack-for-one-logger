@@ -18,13 +18,13 @@ public class SlackMessage {
     
     public SlackBlockHeader createBlockHeader() {
         SlackBlockHeader block = new SlackBlockHeader();
-        blocks.add(block);
+        addBlock(block);
         return block;
     }
 
     public SlackBlockSection createBlockSection() {
         SlackBlockSection block = new SlackBlockSection();
-        blocks.add(block);
+        addBlock(block);
         return block;
     }
     

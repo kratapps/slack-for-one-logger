@@ -1,5 +1,5 @@
 @IsTest
-private class SlackSendMessageTest {
+private class SlackTest {
     @IsTest
     static void testSend() {
         Test.setMock(HttpCalloutMock.class, new SlackSendMessageMock());
@@ -55,6 +55,66 @@ private class SlackSendMessageTest {
         Assert.isEqual(msg.toJSON(), req.body, 'Expected body to be Slack message JSON.');
     }
 
+    @IsTest
+    static void testSlackBlockHeader() {
+        SlackBlockHeader block = new SlackBlockHeader().setPlainText('txt');
+        Assert.isEqual('header', block.type);
+        Assert.isEqual('txt', block.text.text);
+        block.setMrkdwn('mrkdwn');
+        Assert.isEqual('mrkdwn', block.text.text);
+    }
+
+    @IsTest
+    static void testSlackBlockSection() {
+        SlackBlockSection block = new SlackBlockSection().setPlainText('txt');
+        Assert.isEqual('section', block.type);
+        Assert.isEqual('txt', block.text.text);
+        block.setMrkdwn('mrkdwn');
+        Assert.isEqual('mrkdwn', block.text.text);
+    }
+
+    @IsTest
+    static void testSlackMention() {
+        SlackMention mention = SlackMention.member('id');
+        Assert.isEqual(SlackMention.Type.MEMBER, mention.type);
+        Assert.isEqual('id', mention.id);
+        Assert.isEqual('<@id>', mention.toString());
+        mention = SlackMention.channel('id');
+        Assert.isEqual(SlackMention.Type.CHANNEL, mention.type);
+        Assert.isEqual('id', mention.id);
+        Assert.isEqual('<#id>', mention.toString());
+        mention = SlackMention.here();
+        Assert.isEqual(SlackMention.Type.HERE, mention.type);
+        Assert.isEqual(null, mention.id);
+        Assert.isEqual('<!here>', mention.toString());
+    }
+
+    @IsTest
+    static void testSlackMentions() {
+        SlackMentions mentions = new SlackMentions();
+        mentions.addMembers(new List<String>{
+                'id'
+        });
+        mentions.addChannel('c');
+        mentions.mentionHere(true);
+        Assert.isTrue(mentions.toString().contains('<@id>'));
+        Assert.isTrue(mentions.toString().contains('<#c>'));
+        Assert.isTrue(mentions.toString().contains('<!here>'));
+    }
+
+    @IsTest
+    static void testSlackMessage() {
+        SlackMessage msg = new SlackMessage();
+        msg.setText('txt');
+        Assert.isEqual('txt', msg.text);
+        msg.createBlockHeader();
+        Assert.isEqual(1, msg.blocks.size());
+        msg.createBlockSection();
+        Assert.isEqual(2, msg.blocks.size());
+        Assert.isTrue(msg.toJSON().contains('header'));
+        Assert.isTrue(msg.toJSON().contains('section'));
+    }
+    
     public class SlackSendMessageMock implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest req) {
             HttpResponse resp = new HttpResponse();
