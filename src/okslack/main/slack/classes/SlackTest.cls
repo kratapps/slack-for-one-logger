@@ -1,8 +1,9 @@
 @IsTest
-private class SlackTest {
+public class SlackTest {
+    
     @IsTest
     static void testSend() {
-        Test.setMock(HttpCalloutMock.class, new SlackSendMessageMock());
+        setMock();
         SlackSendMessage api = new SlackSendMessage();
         SlackMessage msg = new SlackMessage();
         SlackSendMessage.Request request = new SlackSendMessage.Request('end', msg);
@@ -18,7 +19,7 @@ private class SlackTest {
 
     @IsTest
     static void testSendAsync() {
-        Test.setMock(HttpCalloutMock.class, new SlackSendMessageMock());
+        setMock();
         SlackSendMessage api = new SlackSendMessage();
         SlackMessage msg = new SlackMessage();
         SlackSendMessage.Request request = new SlackSendMessage.Request('end', msg);
@@ -36,7 +37,7 @@ private class SlackTest {
 
     @IsTest
     static void testSendMix() {
-        Test.setMock(HttpCalloutMock.class, new SlackSendMessageMock());
+        setMock();
         SlackSendMessage api = new SlackSendMessage();
         SlackMessage msg = new SlackMessage();
         List<SlackSendMessage.Request> requests = new List<SlackSendMessage.Request>();
@@ -113,6 +114,10 @@ private class SlackTest {
         Assert.isEqual(2, msg.blocks.size());
         Assert.isTrue(msg.toJSON().contains('header'));
         Assert.isTrue(msg.toJSON().contains('section'));
+    }
+    
+    public static void setMock() {
+        Test.setMock(HttpCalloutMock.class, new SlackSendMessageMock());
     }
     
     public class SlackSendMessageMock implements HttpCalloutMock {
