@@ -1,5 +1,7 @@
 @IsTest
 private class SlackForOneLoggerPluginTest {
+    private static final ok.Logger logger = ok.Logger.getLogger(SlackForOneLoggerPluginTest.class);
+    
     @IsTest
     static void testGetPluginType() {
         SlackTest.setMock();
@@ -19,6 +21,15 @@ private class SlackForOneLoggerPluginTest {
                 )
         });
         Assert.isEqual(1, Limits.getQueueableJobs());
+        Test.stopTest();
+    }
+
+    @IsTest
+    static void testPluginExecution() {
+        SlackTest.setMock();
+        Test.startTest();
+        logger.info().log('test');
+        ok.Logger.publish();
         Test.stopTest();
     }
 }
