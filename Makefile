@@ -1,6 +1,10 @@
 alias=okslack
 alias_dev_org=okslack-dev
 
+package_id=0337Q000000HIZo
+version_name=1.0
+version_id=04t7Q000000Hl9w
+
 scratch-org:
 	make create-scratch-org
 	sfdx force:package:install -u ${alias} -r -w 60 -p 04t09000000vBRA # One Logger

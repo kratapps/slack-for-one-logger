@@ -1,7 +1,7 @@
 # Slack for One Logger
 
 [![App Exchange](https://img.shields.io/badge/AppExchange-Slack%20for%20One%20Logger%20-blue)](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GV7OBUA1)
-[![Security Review](https://img.shields.io/badge/Security%20Review-In%20Review-green)](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GV75lUAD)
+[![Security Review](https://img.shields.io/badge/Security%20Review-In%20Review-green)](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GV7OBUA1)
 
 One Logger Plugin to send Slack messages.
 
