@@ -31,10 +31,7 @@ public inherited sharing class SlackSendMessage implements Queueable, Database.A
         req.setHeader('Content-type', 'application/json');
         req.setBody(request.message.toJSON());
         HttpResponse resp = http.send(req);
-        Boolean isSuccessful = resp.getStatusCode() == 200;
-        if (isSuccessful) {
-            logger.info().addHttpRequest(req).addHttpResponse(resp).log('Slack message success.');
-        } else {
+        if (resp.getStatusCode() != 200) {
             logger.error().addHttpRequest(req).addHttpResponse(resp).log('Slack message failed.');
         }
     }
