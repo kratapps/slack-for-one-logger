@@ -17,3 +17,11 @@ unit-test:
 	
 unit-test-dev:
 	sfdx force:apex:test:run --codecoverage --testlevel RunLocalTests --resultformat human -u ${alias}
+
+git-tag:
+	git tag -fa latest -m ${version_name}
+	git tag -fa ${version_id} -m ${version_name}
+	git tag -fa ${version_name} -m ${version_name}
+
+git-push-tags:
+	git push -f --tags
