@@ -2,8 +2,8 @@ alias=okslack
 alias_dev_org=okslack-dev
 
 package_id=0337Q000000HIZo
-version_name=1.0
-version_id=04t7Q000000Hl9w
+version_name=1.1
+version_id=04t7Q000000HlA1
 
 scratch-org:
 	make create-scratch-org
