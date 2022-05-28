@@ -2,10 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Log_Field_Set__c</fullName>
     <defaultValue>&apos;Slack_Log_Field_Set&apos;</defaultValue>
-    <description>You can configure the fields to be send in the message by field set. Value should be the field set API name. Note that this field set is created on ok__Log__c object but the field values will be populated from ok__Log_Event__e record.</description>
+    <description>You can configure the fields to send in the message using a field set. Value should be the field set API name. Note that this field set is created on ok__Log__c object but the field values will be populated from ok__Log_Event__e record.</description>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
-    <inlineHelpText>You can configure the fields to be send in the message by field set. Value should be the field set API name. Note that this field set is created on ok__Log__c object but the field values will be populated from ok__Log_Event__e record.</inlineHelpText>
+    <inlineHelpText>You can configure the fields to send in the message using a field set. Value should be the field set API name. Note that this field set is created on ok__Log__c object but the field values will be populated from ok__Log_Event__e record.</inlineHelpText>
     <label>Log Field Set</label>
     <length>64</length>
     <required>false</required>
