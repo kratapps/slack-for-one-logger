@@ -57,8 +57,10 @@ public inherited sharing class SlackService {
             String eventText = String.join(eventTextParts, '\n');
             message.createBlockSection().setMrkdwn(eventText);
         }
-        SlackMentions mentions = new SlackMentions().mentionHere(mentionHere).addMembers(mentionUserIds);
-        message.createBlockSection().setMrkdwn(mentions.toString());
+        if (mentionHere) {
+            SlackMentions mentions = new SlackMentions().mentionHere(mentionHere).addMembers(mentionUserIds);
+            message.createBlockSection().setMrkdwn(mentions.toString());
+        }
         return message;
     }
 }
