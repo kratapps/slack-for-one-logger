@@ -8,6 +8,7 @@ version_id=04t7Q000000HlA1
 scratch-org:
 	make create-scratch-org
 	sfdx force:package:install -u ${alias} -r -w 60 -p 04t09000000vBRA # One Logger
+	sfdx force:package:install -u ${alias} -r -w 60 -p 04t5e000000vmwU # One Logger Utils
 	sfdx force:source:push -u ${alias}
 
 create-scratch-org:

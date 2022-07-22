@@ -2,11 +2,12 @@
  * Generic SObjects collection.
  */
 public virtual class SObjects {
+    private DescribeSObjectResult describe;
+    private SObjectType type;
+
     private List<SObject> records { get; private set; } {
         records = new List<SObject>();
     }
-    private DescribeSObjectResult describe;
-    private SObjectType type;
 
     public SObjects(List<SObject> records, SObjectType type) {
         this.records = records?.clone();
