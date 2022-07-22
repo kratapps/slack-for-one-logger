@@ -54,10 +54,12 @@ public inherited sharing class SlackService {
                 String fieldValue = String.valueOf(event.get(fieldName));
                 eventTextParts.add('*' + fieldLabel + '*: ' + fieldValue);
             }
-            String eventText = String.join(eventTextParts, '\n');
-            message.createBlockSection().setMrkdwn(eventText);
+            if (!eventTextParts.isEmpty()) {
+                String eventText = String.join(eventTextParts, '\n');
+                message.createBlockSection().setMrkdwn(eventText);
+            }
         }
-        if (mentionHere) {
+        if (mentionHere != null && mentionHere) {
             SlackMentions mentions = new SlackMentions().mentionHere(mentionHere).addMembers(mentionUserIds);
             message.createBlockSection().setMrkdwn(mentions.toString());
         }
