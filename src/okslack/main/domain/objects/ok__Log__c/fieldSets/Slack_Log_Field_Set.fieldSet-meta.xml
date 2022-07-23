@@ -17,6 +17,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>ok__Datetime__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>ok__External_Log_Id__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -434,11 +439,6 @@
     </displayedFields>
     <displayedFields>
         <field>ok__User_Username__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>ok__Datetime__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
