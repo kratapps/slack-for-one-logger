@@ -5,6 +5,8 @@
 
 # Slack for One Logger
 
+![Beta](https://img.shields.io/badge/beta-yellow)
+
 [![App Exchange](https://img.shields.io/badge/AppExchange-Slack%20for%20One%20Logger%20-blue?logo=salesforce)](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GV7OBUA1)
 [![Security Review](https://img.shields.io/badge/Security%20Review-In%20Review-green)](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GV7OBUA1)
 [![GitHub](https://img.shields.io/badge/GitHub-Public-black?logo=github)](https://github.com/kratapps/slack-for-one-logger)
@@ -16,8 +18,7 @@ One Logger Plugin to send Slack messages.
 
 ## Installation
 
-Install our free [Managed Package](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GV7OBUA1).
-
+Install our free [Managed Package](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000GV7OBUA1).  
 Version ID: 04t7Q000000HzTl
 
 ## Setup
