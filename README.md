@@ -1,4 +1,4 @@
-<a href="https://kratapps.com/one-logger">
+<a href="https://kratapps.com/one-logger/plugins/slack-for-one-logger/">
   <img title="One Logger" alt="TDF" width="60px" height="60px" align="right"
        src="https://kratapps.com/images/slack_for_one_logger_logo_200_200.png"  />
 </a>
