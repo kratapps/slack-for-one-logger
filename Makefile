@@ -2,8 +2,8 @@ alias=okslack
 alias_dev_org=okslack-dev
 
 package_id=0337Q000000HIZo
-version_name=1.1
-version_id=04t7Q000000HlA1
+version_name=1.2
+version_id=04t7Q000000HzTl
 
 scratch-org:
 	sfdx force:org:create -s -a ${alias} -f config/project-scratch-def.json -d 30
